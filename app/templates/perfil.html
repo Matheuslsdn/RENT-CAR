@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Rent a Car</title>
+</head>
+<body>
+    <section id="header">
+        <div id="menu">
+            <div id="logo">
+                <img src="../static/imagens/logo.png" width="84">
+            </div>
+            <nav>
+                <ul class="poppins-light">
+                    <li><a href="/index_logged">Home</a></li>
+                    <li><a href="/veiculos_logged"> Veículos</a></li>
+                    <li><a href="/alugar_logged">Alugar</a></li>
+                    <li><a href="/cad_veiculo">Cadastrar Veículo</a></li>
+                    <li><a href="/perfil">Minha Conta</a></li>
+                    <li><a href="/logout">Sair</a></li>
+                </ul>
+            </nav>
+            <div></div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h1>Adicionar Informações Adicionais</h1>
+            <form method="POST" action="/perfil">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento">
+                <br>
+                <label for="rg">RG:</label> 
+                <input type="text" id="rg" name="rg">
+                <br>
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf">
+                <br>
+                <label for="endereco">Endereço:</label>
+                <textarea id="endereco" name="endereco"></textarea>
+                <br>
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone">
+                <br>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </section><br><br><br><br>
+    <footer>
+        Todos os Direitos Reservados - Matheus - 2024 
+    </footer>
+</body>
+</html>

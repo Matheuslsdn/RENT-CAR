@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Rent a Car</title>
+</head>
+<body>
+    <section id="header">
+        <div id="menu">
+            <div id="logo">
+                <img src="/static/imagens/logo.png" width="84">
+            </div>
+            <nav>
+                <ul class="poppins-light">
+                    <li><a href="/logged">Home</a></li>
+                    <li><a href="/veiculos_logged"> Veículos</a></li>
+                    <li><a href="/alugar_logged">Alugar</a></li>
+                    <li><a href="/cad_veiculo">Cadastrar Veículo</a></li>
+                    <li><a href="/perfil">Minha Conta</a></li>
+                    <li><a href="/logout">Sair</a></li>
+                </ul>
+            </nav>
+            <div></div> 
+        </div>
+    </section>
+    <section id="content">        
+        <main id="main">
+        <!-- veiculos -->
+        <form method="post" action="/cad_veiculo" enctype="multipart/form-data">
+            <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" class="form-control" id="marca" name="marca" required>
+            </div>
+
+            <div class="form-group">
+                <label for="modelo">Modelo:</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <input type="text" class="form-control" id="categoria" name="categoria" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ano">Ano:</label>
+                <input type="date" name="ano" required>
+            </div>
+
+            <div class="form-group">
+                <label for="preco_dia">Preço por Dia:</label>
+                <input type="number" step="0.01" class="form-control" id="preco_dia" name="preco_dia" required>
+            </div>
+
+            <div class="form-group">
+                <label for="disponibilidade">Disponibilidade:</label> 
+        
+                <select id="disponibilidade" name="disponibilidade">
+                    <option value="disponivel">Disponível</option>
+                    <option value="indisponivel">Indisponível</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="placa">Placa:</label>
+                <input type="text" class="form-control" id="placa" name="placa" required>
+            </div>
+            <div>
+                <label for="imagem">Imagem:</label>
+                <input type="file" id="imagem" name="imagem">
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    <footer>
+        Todos os Direitos Reservados - Matheus - 2024 
+    </footer>
+    
+</body>
+</html>

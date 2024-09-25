@@ -1,0 +1,54 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/app.css">
+    <title>Vitrine de Veículos</title>  
+</head>
+<body>
+    <section id="header">
+        <div id="menu">
+            <div id="logo">
+                <img src="../static/imagens/logo.png" width="84">
+            </div>
+            <nav>
+                <ul class="poppins-light">
+                    <li><a href="/index_logged">Home</a></li>
+                    <li><a href="/veiculos_logged"> Veículos</a></li>
+                    <li><a href="/alugar_logged">Alugar</a></li>
+                    <li><a href="/cad_veiculo">Cadastrar Veículo</a></li>
+                    <li><a href="/perfil">Minha Conta</a></li>
+                    <li><a href="/logout">Sair</a></li>
+                </ul>
+            </nav>
+            <div></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="vitrine-container">
+            {% for veiculo in veiculos %}
+            <div class="veiculo-card">
+                <img src="{{ url_for('static', filename='uploads/' ~ veiculo.imagem) }}" alt="{{ veiculo.nome }}">
+                <h3>{{ veiculo.nome }}</h3>
+                <p class="preco">R$ {{ veiculo.preco_dia }} / dia</p>
+                <p class="{% if veiculo.disponibilidade == 'disponivel' %}disponivel{% else %}indisponivel{% endif %}">
+                    {{ veiculo.disponibilidade == 'disponivel' and 'Disponível' or 'Indisponível' }}
+                </p>
+                <p>Ano: {{ veiculo.ano.year }}</p>
+                <p>Categoria: {{ veiculo.categoria }}</p>
+                {% if veiculo.disponibilidade == 'disponivel' %}
+                    <a href="{{ url_for('home.reservar_veiculo', veiculo_id=veiculo.id) }}" class="reservar-btn">Reservar</a>
+                {% else %}
+                    <button class="indisponivel-btn" disabled>Indisponível</button>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        Todos os Direitos Reservados - Matheus - 2024 
+    </footer>
+</body>
+</html>
